@@ -58,14 +58,17 @@ public class MainActivity extends AppCompatActivity {
                 String DOB = dob.getText().toString();
                 String Qualification = qualification.getText().toString();
                 String Password = pwd.getText().toString();
-
-
-                Boolean check=DB.register(Name,Email,Phone,DOB,Qualification,Password);
-                if(check){
-                    Toast.makeText(MainActivity.this,"new entry inserted",Toast.LENGTH_LONG).show();
-                }
+                if (Name.equals("") || Email.equals("") || Phone.equals("") || DOB.equals("") || Qualification.equals("") || Password.equals(""))
+                    Toast.makeText(MainActivity.this, "please enter all the fields", Toast.LENGTH_SHORT).show();
                 else {
-                    Toast.makeText(MainActivity.this,"new entry not inserted",Toast.LENGTH_LONG).show();
+
+                    Boolean check = DB.register(Name, Email, Phone, DOB, Qualification, Password);
+                    if (check) {
+                        Toast.makeText(MainActivity.this, "new entry inserted", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        Toast.makeText(MainActivity.this, "new entry not inserted", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

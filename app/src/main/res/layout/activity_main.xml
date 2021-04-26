@@ -44,7 +44,8 @@
                 android:text="@string/name"
                 android:textColor="#FDF8C8"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <EditText
                 android:id="@+id/mail"

@@ -34,5 +34,25 @@ public class DBHelper extends SQLiteOpenHelper {
         long result=DB.insert("User",null,contentValue);
         return result!=-1;
     }
+    public Cursor get(String email,String pwd){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor=db.rawQuery("select * from User where email=? and pwd=?", new String[] {email,pwd});
+        return cursor;
+
+    }
+
+    Cursor readAll()
+    {
+        String query="select * from  User";
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor=null;
+        if(db!=null)
+        {
+            cursor=db.rawQuery(query,null);
+        }
+        return cursor;
+
+    }
 
 }
+

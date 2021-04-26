@@ -100,6 +100,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:onClick="sign1"
         android:orientation="vertical">
 
         <Button
@@ -111,7 +112,6 @@
             android:background="#FF5722"
             android:contentDescription="@string/Login"
             android:gravity="center"
-            android:onClick="sign1"
             android:text="@string/Login"
             android:textSize="24sp"
             android:textStyle="bold" />
