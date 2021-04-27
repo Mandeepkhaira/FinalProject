@@ -15,7 +15,7 @@
     <string name="edit">Edit</string>
 
 
-    <string name="SignInLabel">User Sign IN</string>
+    <string name="SignInLabel">User Sign In</string>
     <string name="userIdLabel">User ID</string>
     <string name="userID">Enter UserID</string>
     <string name="PasswordLabel">Password</string>
