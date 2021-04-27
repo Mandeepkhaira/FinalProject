@@ -42,8 +42,8 @@ public class activity2 extends AppCompatActivity {
 
                     } else {
                         Toast.makeText(activity2.this, "login Successful", Toast.LENGTH_SHORT).show();
-                       Intent intent=new Intent(getApplicationContext(),activity3.class);
-                        startActivity(intent);
+                       Intent intent1=new Intent(getApplicationContext(),activity3.class);
+                        startActivity(intent1);
 
                     }
                 }

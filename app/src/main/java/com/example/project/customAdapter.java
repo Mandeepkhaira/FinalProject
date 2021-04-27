@@ -35,29 +35,30 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.name.setText(String.valueOf(name.get(position)));
-        holder.email.setText(String.valueOf(email.get(position)));
-        holder.phone.setText(String.valueOf(phn.get(position)));
-        holder.dob.setText(String.valueOf(dob.get(position)));
-        holder.qualification.setText(String.valueOf(qualification.get(position)));
+        holder.nametxt.setText(String.valueOf(name.get(position)));
+        holder.emailtxt.setText(String.valueOf(email.get(position)));
+        holder.phonetxt.setText(String.valueOf(phn.get(position)));
+        holder.dobtxt.setText(String.valueOf(dob.get(position)));
+        holder.qualificationtxt.setText(String.valueOf(qualification.get(position)));
 
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return name.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name,email,phone,dob,qualification;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView nametxt,emailtxt,phonetxt,dobtxt,qualificationtxt;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            name=itemView.findViewById(R.id.name);
-            email=itemView.findViewById(R.id.email);
-            phone=itemView.findViewById(R.id.phone);
-            dob=itemView.findViewById(R.id.dob);
-            qualification=itemView.findViewById(R.id.qualification);
+            nametxt=itemView.findViewById(R.id.name);
+            emailtxt=itemView.findViewById(R.id.E);
+            phonetxt=itemView.findViewById(R.id.P);
+            dobtxt=itemView.findViewById(R.id.dob);
+            qualificationtxt=itemView.findViewById(R.id.Q);
         }
     }
 }

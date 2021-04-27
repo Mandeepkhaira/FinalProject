@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table User(name Text ,email Text primary key,phn Text,dob text,qualification Text,pwd Text)");
+        db.execSQL("create table User(name Text ,email Text primary key,phn number,dob text,qualification Text,pwd Text)");
     }
 
     @Override
@@ -53,6 +53,27 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
 
     }
+    public boolean updateuserdata(String name,String email,String phone,String dob,String qualification,String password)
+    {
+        SQLiteDatabase DB=this.getWritableDatabase();
+        ContentValues contentValue=new ContentValues();
+        contentValue.put("name",name);
+        contentValue.put("email",email);
+        contentValue.put("qualification",qualification);
+        contentValue.put("password",password);
+        contentValue.put("dob",dob);
+        Cursor cursor=DB.rawQuery("select * from User where email=?",new String[]{email});
+        if(cursor.getCount()>0) {
+            long result = DB.update("User", contentValue, "email=?", new String[]{email});
+
+
+            return result != -1;
+        }
+        return false;
+    }
+
+
+
 
 }
 

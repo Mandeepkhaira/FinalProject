@@ -12,6 +12,8 @@
     <string name="password">Password</string>
     <string name="Reg">btn</string>
     <string name="signIn">SignIn</string>
+    <string name="edit">Edit</string>
+
 
     <string name="SignInLabel">User Sign IN</string>
     <string name="userIdLabel">User ID</string>
@@ -19,13 +21,14 @@
     <string name="PasswordLabel">Password</string>
     <string name="Password2">Enter Password</string>
     <string name="Login">Login</string>
-    <string name="Edit">edituser</string>
+
 
     <string name="Name">name</string>
     <string name="Email">email</string>
     <string name="Phone">phone</string>
     <string name="DOB">dob</string>
     <string name="Qualification">qualification</string>
+
 
 
 

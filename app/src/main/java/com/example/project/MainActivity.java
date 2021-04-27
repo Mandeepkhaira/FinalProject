@@ -9,26 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.Date;
-import java.io.IOException;
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.widget.TextView;
 import android.widget.Toast;
-
-
-import java.lang.Class;
 
 public class MainActivity extends AppCompatActivity {
     EditText name,email,phn,dob,qualification,pwd;
-    Button rbtn,sign;
+    Button rbtn,sign,update;
     DBHelper DB;
 
     @Override
@@ -44,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         pwd = findViewById(R.id.pwd);
         rbtn = findViewById(R.id.Registerbutton);
         sign=findViewById(R.id.btn2);
+        update=findViewById(R.id.update);
 
         DB=new DBHelper(this);
 
@@ -72,6 +58,30 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String nametxt=name.getText().toString();
+                String emailtxt=email.getText().toString();
+                String phntxt=phn.getText().toString();
+                String dobtxt=dob.getText().toString();
+                String qualificationtxt=qualification.getText().toString();
+                String passwordtxt=pwd.getText().toString();
+                Boolean checkupdate=DB.updateuserdata(nametxt,emailtxt,phntxt,dobtxt,qualificationtxt,passwordtxt);
+                if(checkupdate){
+                    Toast.makeText(MainActivity.this,"Entry updated",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this,"Entry not updated",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
+
 
 
     }

@@ -18,10 +18,10 @@ public class activity3 extends AppCompatActivity {
     customAdapter customadapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity4);
+        setContentView(R.layout.activity3);
         recyclerview=findViewById(R.id.list);
 
-       Intent intent = getIntent();
+       Intent intent1 = getIntent();
 
 
         DB=new DBHelper(activity3.this);
@@ -35,8 +35,10 @@ public class activity3 extends AppCompatActivity {
         recyclerview.setAdapter(customadapter);
         recyclerview.setLayoutManager(new LinearLayoutManager(activity3.this));
 
-        Intent intent1=new Intent(activity3.this,activity4.class);
-        startActivity(intent1);
+
+        // to be modified
+       Intent intent2=new Intent(activity3.this,activity4.class);
+        startActivity(intent2);
 
     }
     void display(){
